@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Class 79 with arrays</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js"></script>
+    <link rel="icon" href="https://envdojo-org.github.io/envdojo/Envninja/img/Logo11.png">
+</head>
+<body>
+    <center>
+        <h3 style="margin-top: 15px; margin-bottom: 15px; ">
+        List of the Students in my Class
+        </h3>
+
+        <div>
+            <span>1</span>
+            <input type="text" placeholder="Name of the student" id="nameofthestudent1">
+            <br>
+            <span>2</span>
+            <input type="text" placeholder="Name of the Student" id="nameofthestudent2">
+            <br>
+            
+            <span>3</span>
+            <input type="text" placeholder="Name of the Student" id="nameofthestudent3">
+            <br>
+            
+            <span>4</span>
+            <input type="text" placeholder="Name of the Student" id="nameofthestudent4">
+            </div>
+            
+            <button onclick="submit()" id="submit_button">
+                Submit
+            </button>
+            
+            <div id="display_name" style="font-weight: bold;">
+            
+            </div>
+            
+            <button onclick="sorting()" id="sort_button">
+                Sort
+            </button>
+            </center>
+            
+            <script>
+            
+	name_of_student_array = [];
+	
+	function submit()
+	{
+        
+        var name_1 = document.getElementById("nameofthestudent1").value;
+        var name_2 = document.getElementById("nameofthestudent2").value;
+        var name_3 = document.getElementById("nameofthestudent3").value;
+        var name_4 = document.getElementById("nameofthestudent4").value;
+
+        name_of_student_array.push(name_1);
+        name_of_student_array.push(name_2);
+        name_of_student_array.push(name_3);
+        name_of_student_array.push(name_4);
+
+		console.log(name_of_student_array);
+		
+        document.getElementById("display_name").innerHTML = name_of_student_array;
+        document.getElementById("submit_button").style.display = "none";
+        document.getElementById("sort_button").style.display = "inline-block";
+
+	}
+
+function sorting()
+{
+	name_of_student_array.sort();
+    console.log(name_of_student_array);
+	document.getElementById("display_name").innerHTML = name_of_student_array;
+}
+            </script>
+
+        </div>
+    </center>
+</body>
+</html>
